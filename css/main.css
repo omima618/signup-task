@@ -1,11 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap");
-@media (max-width: 991px) {
-  .welcome {
-    min-height: -webkit-fit-content;
-    min-height: -moz-fit-content;
-    min-height: fit-content;
-  }
-}
 .welcome .text-wrapper h1 {
   font-size: 56px !important;
   line-height: 67px;
@@ -95,6 +88,13 @@ a {
 
 section {
   min-height: 100vh;
+}
+@media (max-width: 991px) {
+  section {
+    min-height: -webkit-fit-content;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+  }
 }
 
 p {

@@ -26,6 +26,9 @@ a {
 }
 section {
     min-height: 100vh;
+    @include breakpoints(small) {
+        min-height: fit-content;
+    }
 }
 p {
     font-size: 24px;

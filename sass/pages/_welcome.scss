@@ -1,7 +1,4 @@
 .welcome {
-    @include breakpoints(small) {
-        min-height: fit-content;
-    }
     .text-wrapper {
         h1 {
             font-size: 56px !important;
