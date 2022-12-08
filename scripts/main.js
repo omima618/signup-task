@@ -47,10 +47,12 @@ const validationHandler = (userData, error = null) => {
         invalid = false;
     // SHOW API ERROR
     if (error) {
-        usernameFeedback.innerHTML = error;
-        emailFeedback.innerHTML = error;
-        passwordFeedback.innerHTML = error;
-        passwordConfirmationFeedback.innerHTML = error;
+        usernameFeedback.innerHTML = error.username ? error.username : '';
+        emailFeedback.innerHTML = error.email ? error.email : '';
+        passwordFeedback.innerHTML = error.password ? error.password : '';
+        passwordConfirmationFeedback.innerHTML = error.password
+            ? error.password
+            : '';
     }
 };
 
@@ -59,19 +61,22 @@ const sendUserData = async (url, userData) => {
     try {
         const response = await fetch(url, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'content-type': 'application/json',
+                accept: 'application/json',
+            },
             body: JSON.stringify(userData),
         });
-        console.log(response);
-        if (!response.ok) {
-            throw new Error('Something went wrong!');
-        }
         const data = await response.json();
+        if (!response.ok) {
+            // SHOW API ERROR
+            validationHandler(userData, data.errors);
+            throw new Error(data.message);
+        }
         localStorage.setItem('user', JSON.stringify(data));
         window.open(`succeed.html`, '_self');
     } catch (error) {
-        // SHOW API ERROR
-        validationHandler(userData, error.message);
+        console.log(error);
     }
 };
 
