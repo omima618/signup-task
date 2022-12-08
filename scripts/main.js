@@ -22,15 +22,15 @@ const validationHandler = (userData, error = null) => {
     // HANDLE FRONTEND VALIDATION
     if (!userData.username.match(usernamePattern)) {
         usernameFeedback.innerHTML =
-            'username should start with character from a-z, end with character, and may contain numbers in betwween';
+            'username should start with character from a-z, end with character, and may contain numbers in between.';
         invalid = true;
     }
     if (!userData.email.match(emailPattern)) {
-        emailFeedback.innerHTML = 'Enter a valid email';
+        emailFeedback.innerHTML = 'Enter a valid email!';
         invalid = true;
     }
     if (userData.password.length < 8) {
-        passwordFeedback.innerHTML = 'Password must be at least 8 charcters';
+        passwordFeedback.innerHTML = 'Password must be at least 8 charcters!';
         invalid = true;
     }
     if (userData.password_confirmation !== userData.password) {
