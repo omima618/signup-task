@@ -1,0 +1,16 @@
+.welcome {
+    @include breakpoints(small) {
+        min-height: fit-content;
+    }
+    .text-wrapper {
+        h1 {
+            font-size: 56px !important;
+            line-height: 67px;
+            @include breakpoints(small) {
+                font-size: 42px;
+                line-height: 50px;
+                text-align: center;
+            }
+        }
+    }
+}

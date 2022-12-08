@@ -1,0 +1,20 @@
+.signup {
+    form {
+        .inp-wrapper {
+            margin-bottom: 10px;
+            input {
+                padding: 20px 20px 20px 61px;
+            }
+            label {
+                left: 32px;
+                img {
+                    width: 29px;
+                    height: 20px;
+                }
+            }
+        }
+        button {
+            margin-top: 20px !important;
+        }
+    }
+}

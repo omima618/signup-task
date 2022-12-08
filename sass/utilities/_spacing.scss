@@ -1,0 +1,21 @@
+.m-b-40 {
+    margin-bottom: 40px;
+}
+.m-b-20 {
+    margin-bottom: 20px;
+}
+.md-m-b-40 {
+    @include breakpoints(small) {
+        margin-bottom: 40px;
+    }
+}
+.md-m-b-10 {
+    @include breakpoints(small) {
+        margin-bottom: 10px !important;
+    }
+}
+.md-m-b-140 {
+    @include breakpoints(small) {
+        margin-bottom: 140px !important;
+    }
+}
