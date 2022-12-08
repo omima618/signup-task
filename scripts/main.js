@@ -50,8 +50,8 @@ const validationHandler = (userData, error = null) => {
         usernameFeedback.innerHTML = error.username ? error.username : '';
         emailFeedback.innerHTML = error.email ? error.email : '';
         passwordFeedback.innerHTML = error.password ? error.password : '';
-        passwordConfirmationFeedback.innerHTML = error.password
-            ? error.password
+        passwordConfirmationFeedback.innerHTML = error.password_confirmation
+            ? error.password_confirmation
             : '';
     }
 };
