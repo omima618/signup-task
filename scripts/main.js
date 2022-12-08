@@ -1,4 +1,4 @@
-// ELEMENTS 
+// ELEMENTS
 const form = document.querySelector('.signup-form');
 const usernameFeedback = document.querySelector('.username-validation');
 const emailFeedback = document.querySelector('.email-validation');
@@ -71,7 +71,7 @@ const sendUserData = async (url, userData) => {
         window.open(`succeed.html`, '_self');
     } catch (error) {
         // SHOW API ERROR
-        validationHandler(userData, error);
+        validationHandler(userData, error.message);
     }
 };
 
